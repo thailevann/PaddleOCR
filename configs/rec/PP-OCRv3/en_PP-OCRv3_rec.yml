@@ -4,21 +4,21 @@ Global:
   epoch_num: 500
   log_smooth_window: 20
   print_batch_step: 10
-  save_model_dir: ./output/v3_en_mobile
-  save_epoch_step: 3
+  save_model_dir:  /content/output
+  save_epoch_step: 10
   eval_batch_step: [0, 2000]
   cal_metric_during_train: true
-  pretrained_model:
+  pretrained_model: /content/output/SRN/latest
   checkpoints:
-  save_inference_dir:
+  save_inference_dir: ./inference/SRN
   use_visualdl: false
   infer_img: doc/imgs_words/ch/word_1.jpg
-  character_dict_path: ppocr/utils/en_dict.txt
-  max_text_length: &max_text_length 25
+  character_dict_path: /content/PaddleOCR/ppocr/utils/dict/vi_vietnam.txt
+  max_text_length: &max_text_length 30
   infer_mode: false
   use_space_char: true
   distributed: true
-  save_res_path: ./output/rec/predicts_ppocrv3_en.txt
+  save_res_path: ./output/SRN/predicts_srn.txt
 
 
 Optimizer:
@@ -77,10 +77,10 @@ Metric:
 Train:
   dataset:
     name: SimpleDataSet
-    data_dir: ./train_data/
+    data_dir:  /content/drive/MyDrive/Van_paddle/kalapa_challenge/data_train/images
     ext_op_transform_idx: 1
     label_file_list:
-    - ./train_data/train_list.txt
+    -  /content/drive/MyDrive/Van_paddle/kalapa_challenge/data_train/rec_gt_train.txt
     transforms:
     - DecodeImage:
         img_mode: BGR
@@ -109,9 +109,9 @@ Train:
 Eval:
   dataset:
     name: SimpleDataSet
-    data_dir: ./train_data
+    data_dir: /content/drive/MyDrive/Van_paddle/kalapa_challenge/data_train/images
     label_file_list:
-    - ./train_data/val_list.txt
+    - /content/drive/MyDrive/Van_paddle/kalapa_challenge/data_train/rec_gt_train.txt
     transforms:
     - DecodeImage:
         img_mode: BGR
