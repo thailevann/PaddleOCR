@@ -6,7 +6,7 @@ Global:
   print_batch_step: 10
   save_model_dir:  /content/output
   save_epoch_step: 10
-  eval_batch_step: [0, 2000]
+  eval_batch_step: [0, 50]
   cal_metric_during_train: true
   pretrained_model: /content/output/SRN/latest
   checkpoints:
@@ -79,8 +79,7 @@ Train:
     name: SimpleDataSet
     data_dir:  /content/drive/MyDrive/Van_paddle/kalapa_challenge/data_train/images
     ext_op_transform_idx: 1
-    label_file_list:
-    -  /content/drive/MyDrive/Van_paddle/kalapa_challenge/data_train/rec_gt_train.txt
+    label_file_list: ["/content/drive/MyDrive/Van_paddle/kalapa_challenge/data_train/rec_gt_train.txt"]
     transforms:
     - DecodeImage:
         img_mode: BGR
@@ -110,8 +109,7 @@ Eval:
   dataset:
     name: SimpleDataSet
     data_dir: /content/drive/MyDrive/Van_paddle/kalapa_challenge/data_train/images
-    label_file_list:
-    - /content/drive/MyDrive/Van_paddle/kalapa_challenge/data_train/rec_gt_train.txt
+    label_file_list: ["/content/drive/MyDrive/Van_paddle/kalapa_challenge/data_train/rec_gt_train.txt"]
     transforms:
     - DecodeImage:
         img_mode: BGR
