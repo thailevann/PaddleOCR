@@ -5,7 +5,7 @@ Global:
   log_smooth_window: 20
   print_batch_step: 10
   save_model_dir:  /content/output
-  save_epoch_step: 50
+  save_epoch_step: 15
   eval_batch_step: [0, 50]
   cal_metric_during_train: true
   pretrained_model: /content/output/SRN/latest
@@ -102,7 +102,7 @@ Train:
         - valid_ratio
   loader:
     shuffle: true
-    batch_size_per_card: 64
+    batch_size_per_card: 32
     drop_last: true
     num_workers: 4
 Eval:
@@ -127,5 +127,5 @@ Eval:
   loader:
     shuffle: false
     drop_last: false
-    batch_size_per_card: 64
+    batch_size_per_card: 32
     num_workers: 4
