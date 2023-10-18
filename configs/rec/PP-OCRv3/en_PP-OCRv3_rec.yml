@@ -4,8 +4,8 @@ Global:
   epoch_num: 500
   log_smooth_window: 20
   print_batch_step: 10
-  save_model_dir:  /content/output
-  save_epoch_step: 15
+  save_model_dir:  /content/drive/MyDrive/Van_paddle/
+  save_epoch_step: 1
   eval_batch_step: [0, 50]
   cal_metric_during_train: true
   pretrained_model: /content/output/SRN/latest
@@ -108,8 +108,8 @@ Train:
 Eval:
   dataset:
     name: SimpleDataSet
-    data_dir: /content/drive/MyDrive/Van_paddle/kalapa_challenge/data_train/images
-    label_file_list: ["/content/drive/MyDrive/Van_paddle/kalapa_challenge/data_train/rec_gt_train.txt"]
+    data_dir: /content/drive/MyDrive/Van_paddle/kalapa_challenge/Eval/images
+    label_file_list: ["/content/drive/MyDrive/Van_paddle/kalapa_challenge/Eval/re_gt_eval.txt"]
     transforms:
     - DecodeImage:
         img_mode: BGR
