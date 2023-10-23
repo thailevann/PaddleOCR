@@ -5,7 +5,7 @@ Global:
   log_smooth_window: 20
   print_batch_step: 10
   save_model_dir:  /content/drive/MyDrive/Van_paddle/
-  save_epoch_step: 3
+  save_epoch_step: 5
   eval_batch_step: [0, 2000]
   cal_metric_during_train: true
   pretrained_model:
