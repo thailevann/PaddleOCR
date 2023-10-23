@@ -18,7 +18,7 @@ Global:
   infer_mode: false
   use_space_char: true
   distributed: true
-  save_res_path:  ./output/SRN/predicts_srn.txt
+  save_res_path:  /content/output/SRN/predicts_srn.txt
   d2s_train_image_shape: [3, 48, -1]
 
 
