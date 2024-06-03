@@ -1,11 +1,11 @@
 Global:
   debug: false
   use_gpu: true
-  epoch_num: 500
+  epoch_num: 5
   log_smooth_window: 20
   print_batch_step: 10
   save_model_dir: ./output/ch_PP-OCR_V3_det/
-  save_epoch_step: 100
+  save_epoch_step: 2
   eval_batch_step:
   - 0
   - 400
@@ -44,7 +44,7 @@ Loss:
   ohem_ratio: 3
 Optimizer:
   name: Adam
-  beta1: 0.9
+  beta1: 0.9  
   beta2: 0.999
   lr:
     name: Cosine
@@ -65,9 +65,9 @@ Metric:
 Train:
   dataset:
     name: SimpleDataSet
-    data_dir: ./train_data/icdar2015/text_localization/
+    data_dir: /content/vietnamese/train_images/
     label_file_list:
-      - ./train_data/icdar2015/text_localization/train_icdar2015_label.txt
+      - /content/train_label.txt
     ratio_list: [1.0]
     transforms:
     - DecodeImage:
@@ -129,9 +129,9 @@ Train:
 Eval:
   dataset:
     name: SimpleDataSet
-    data_dir: ./train_data/icdar2015/text_localization/
+    data_dir: /content/vietnamese/train_images/
     label_file_list:
-      - ./train_data/icdar2015/text_localization/test_icdar2015_label.txt
+      - /content/train_label.txt
     transforms:
     - DecodeImage:
         img_mode: BGR
@@ -160,4 +160,4 @@ Eval:
     shuffle: false
     drop_last: false
     batch_size_per_card: 1
-    num_workers: 2
+    num_workers: 0
